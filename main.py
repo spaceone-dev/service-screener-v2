@@ -270,7 +270,12 @@ for acctId, cred in rolesCred.items():
     	shutil.rmtree(path_to_folder)
 
     os.chdir(_C.ROOT_DIR)
-    filetodel = _C.ROOT_DIR + '/output.zip'
+
+    if bucket:
+        filetodel = bucket + '/output.zip'
+    else:
+        filetodel = _C.ROOT_DIR + '/output.zip'
+
     if os.path.exists(filetodel):
         os.remove(filetodel)
     
