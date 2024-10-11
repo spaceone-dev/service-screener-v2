@@ -271,10 +271,7 @@ for acctId, cred in rolesCred.items():
 
     os.chdir(_C.ROOT_DIR)
 
-    if bucket:
-        filetodel = bucket + '/output.zip'
-    else:
-        filetodel = _C.ROOT_DIR + '/output.zip'
+    filetodel = _C.ROOT_DIR + '/output.zip'
 
     if os.path.exists(filetodel):
         os.remove(filetodel)
@@ -319,7 +316,13 @@ else:
         shutil.rmtree(apiFolder)
         
     shutil.copytree(adminlteDir, apiFolder, ignore=shutil.ignore_patterns('res*'))
-    shutil.make_archive('output', 'zip', apiFolder)
+
+    if bucket:
+        output_path = bucket + 'output'
+    else:
+        output_path = 'output'
+    print(output_path+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    shutil.make_archive(output_path, 'zip', apiFolder)
     shutil.rmtree(apiFolder)
 
 print("Pages generated, download \033[1;42moutput.zip\033[0m to view")
