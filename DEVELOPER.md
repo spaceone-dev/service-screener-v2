@@ -26,7 +26,8 @@ python3 -m venv .
 source bin/activate
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
-alias screener="python3 $(pwd)/main.py"
+alias 
+screener="python3 $(pwd)/main.py"
 
 ## When executing SS locally
 screener --regions ap-southeast-1 --profile ss

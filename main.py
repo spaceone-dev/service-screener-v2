@@ -318,10 +318,10 @@ else:
     shutil.copytree(adminlteDir, apiFolder, ignore=shutil.ignore_patterns('res*'))
 
     if bucket:
-        output_path = bucket + 'output'
+        output_path = bucket + '/output'
     else:
         output_path = 'output'
-    print(output_path+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
     shutil.make_archive(output_path, 'zip', apiFolder)
     shutil.rmtree(apiFolder)
 
