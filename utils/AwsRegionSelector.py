@@ -55,23 +55,24 @@ class AwsRegionSelector:
         
     @staticmethod
     def prompt_confirm_get_all_regions():
-        print()
-        _warn("You specify --regions as ALL. It will loop through all ENABLED/OPT-IN regions and it is going to take sometime to complete.")
-
-        attempt = 0
-        while True:
-            if attempt > 0:
-                _warn("You have entered an invalid option. Please try again.")
-            
-            confirm = input("Do you want to process? Please enter 'y' for yes, 'n' for no: ").lower()
-            attempt += 1
-            if confirm in ['y', 'n']:
-                break
-        
-        if confirm == 'y':
-            return True
-        
-        return False
+        # print()
+        # _warn("You specify --regions as ALL. It will loop through all ENABLED/OPT-IN regions and it is going to take sometime to complete.")
+        #
+        # attempt = 0
+        # while True:
+        #     if attempt > 0:
+        #         _warn("You have entered an invalid option. Please try again.")
+        #
+        #     confirm = input("Do you want to process? Please enter 'y' for yes, 'n' for no: ").lower()
+        #     attempt += 1
+        #     if confirm in ['y', 'n']:
+        #         break
+        #
+        # if confirm == 'y':
+        #     return True
+        #
+        # return False
+        return True
         
     @staticmethod
     def prompt_for_region():
